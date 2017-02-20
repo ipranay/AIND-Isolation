@@ -49,8 +49,8 @@ def custom_score(game, player):
         return -1
 
     # return float(my_moves - opp_moves)
-    # return float(my_moves / opp_moves)
     # return float(my_moves)
+    # return float(my_moves / opp_moves)
     return float(my_moves / (2 * opp_moves))
 
 
@@ -90,7 +90,7 @@ class CustomPlayer:
         self.score = score_fn
         self.method = method
         self.time_left = None
-        self.TIMER_THRESHOLD = timeout
+        self.TIMER_THRESHOLD = timeout - 2 # leave some time for returns etc.
 
     def get_move(self, game, legal_moves, time_left):
         # Search for the best move from the available legal moves and return a
